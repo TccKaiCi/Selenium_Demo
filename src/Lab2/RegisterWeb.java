@@ -1,3 +1,4 @@
+package Lab2;
 import java.awt.Desktop.Action;
 import java.io.File;
 

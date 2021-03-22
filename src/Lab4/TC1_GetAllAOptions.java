@@ -25,6 +25,7 @@ public class TC1_GetAllAOptions {
 		WebElement list = driver.findElement(By.className("erkvQe"));
 		
 		// waiting time
+		// to make sure that can be runtime error
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		// get list item <li>

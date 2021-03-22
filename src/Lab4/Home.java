@@ -32,12 +32,12 @@ public class Home {
 		driver.findElement(By.id("SubmitCreate")).click();
 		
 
-		driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 //		String newUrl = driver.getCurrentUrl();
 		try {
 			WebElement alert = driver.findElement(By.id("create_account_error"));
 			String strAlert = alert.getAttribute("style");
-			if (strAlert.contains("block")) 
+			if (strAlert.equalsIgnoreCase("display:none") != true) 
 				System.out.println("Invalid email address");
 			else
 				System.out.println("Success");
@@ -48,7 +48,7 @@ public class Home {
 		
 		System.out.println("Finish");
 		// close
-//		driver.close();
+		driver.close();
 	}
 	
 }

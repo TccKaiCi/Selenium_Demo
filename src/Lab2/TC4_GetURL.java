@@ -1,11 +1,10 @@
+package Lab2;
 import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
-public class TC1_LaunchAndClose {
+public class TC4_GetURL {
 	public static void main(String[] args) {
 		// Create path file auto
         String chromeDriver = new File("").getAbsolutePath() + "\\chromedriver.exe";
@@ -14,9 +13,15 @@ public class TC1_LaunchAndClose {
 		System.setProperty("webdriver.chrome.driver",chromeDriver);
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://godaddy.com/");
-		
-		
-		// close
-		driver.close();
+
+		//Resize current window to the set dimension
+	    driver.manage().window().maximize();
+	       
+	    // get URL page and print
+	    String currentURL = driver.getCurrentUrl();
+	    System.out.println(currentURL);
+
+	    // close
+	    driver.close();
 	}
 }

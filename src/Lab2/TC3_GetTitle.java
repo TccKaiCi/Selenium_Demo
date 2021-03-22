@@ -1,9 +1,10 @@
+package Lab2;
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TC4_GetURL {
+public class TC3_GetTitle {
 	public static void main(String[] args) {
 		// Create path file auto
         String chromeDriver = new File("").getAbsolutePath() + "\\chromedriver.exe";
@@ -16,10 +17,10 @@ public class TC4_GetURL {
 		//Resize current window to the set dimension
 	    driver.manage().window().maximize();
 	       
-	    // get URL page and print
-	    String currentURL = driver.getCurrentUrl();
-	    System.out.println(currentURL);
-
+	    // get Title page and print
+	    String title = driver.getTitle();
+	    System.out.println(title);	
+	    
 	    // close
 	    driver.close();
 	}
